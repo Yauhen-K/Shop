@@ -1,19 +1,19 @@
 package com.task1.shop;
 
 public class Produkt {
-    public Produkt(String name, int price) {
+    public Produkt(ProductType name, int price) {
         this.name = name;
         this.price = price;
     }
 
-    private String name;
+    private ProductType name;
     private int price;
 
-    public String getName() {
+    public ProductType getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(ProductType name) {
         this.name = name;
     }
 
