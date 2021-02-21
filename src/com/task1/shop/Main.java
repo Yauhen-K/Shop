@@ -1,25 +1,30 @@
 package com.task1.shop;
 
 
+import java.util.HashMap;
+
 public class Main {
 
     public static void main(String[] args) {
-        Produkt maslo73 = new Produkt(ProductType.MASLO, 5);
-        Produkt moloko3 = new Produkt(ProductType.MOLOKO, 5);
-        Produkt xleb2 = new Produkt(ProductType.XLEB, 5);
-        Produkt moloko2 = new Produkt(ProductType.MOLOKO, 5);
-        Produkt xleb4 = new Produkt(ProductType.XLEB, 5);
+        Product maslo = new Product(ProductType.MASLO);
+        Product moloko = new Product(ProductType.MOLOKO);
+        Product xleb = new Product(ProductType.XLEB);
+        Product voda = new Product(ProductType.VODA);
+        Product sok = new Product(ProductType.SOK);
+        Product chai = new Product(ProductType.CHAI);
 
         Korzina korzina = new Korzina();
-        korzina.dobavit(maslo73);
-        korzina.dobavit(moloko2,2);
-        korzina.dobavit(xleb2,4);
-        korzina.dobavit(moloko3,5);
-        korzina.dobavit(xleb4,3);
+        korzina.dobavit(maslo);
+        korzina.dobavit(moloko, 3);
+        korzina.dobavit(xleb, 5);
+        korzina.dobavit(voda, 4);
+        korzina.dobavit(sok, 7);
+        korzina.dobavit(chai, 3);
 
         Kassa kassa = new Kassa();
-        int s = kassa.calculatePrice(korzina);
+        int summaPokupok = kassa.calculatePrice(korzina);
+        kassa.pechatCheka(korzina);
 
-        System.out.println(s);
+        System.out.println("Сумма покупок " + summaPokupok);
     }
 }
